@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f1e8">
+  <meta name="description" content="A peaceful, private Bible reading and journaling space.">
+  <title>E-Journal Bible</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app-overrides.css">
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#page-home" data-page="home" aria-label="E-Journal Bible home">
+        <span class="brand-mark" aria-hidden="true">✦</span><span><strong>e-journal</strong><small>BIBLE &amp; REFLECTION</small></span>
+      </a>
+      <div class="sidebar-label">YOUR SPACE</div>
+      <nav class="primary-nav">
+        <button class="nav-item active" data-page="home"><span>⌂</span>Home</button>
+        <button class="nav-item" data-page="bible"><span>▤</span>Bible</button>
+        <button class="nav-item" data-page="journal"><span>✎</span>Journal</button>
+        <button class="nav-item" data-page="prayer"><span>♡</span>Prayer journal</button>
+        <button class="nav-item" data-page="plans"><span>◷</span>Reading plans</button>
+        <button class="nav-item" data-page="mybible"><span>⌑</span>My Bible</button>
+        <button class="nav-item" data-page="study"><span>✧</span>Study space</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-verse"><span class="eyebrow">A MOMENT OF STILLNESS</span><p>“Be still, and know that I am God.”</p><small>PSALM 46:10 · KJV</small></div>
+        <button class="nav-item" data-page="settings"><span>⚙</span>Settings</button>
+        <div class="local-note"><span class="status-dot"></span>Private on this device</div>
+      </div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumbs"><span id="top-crumb">YOUR QUIET PLACE</span><span class="crumb-sep">/</span><strong id="top-title">Home</strong></div>
+        <div class="top-actions"><button class="search-shortcut" id="global-search-open" aria-label="Search Scripture"><span>⌕</span> Search Scripture <kbd>⌘ K</kbd></button><button class="avatar" id="profile-shortcut" title="Settings">A</button></div>
+      </header>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <section class="page active" id="page-home" data-page="home"></section>
+      <section class="page" id="page-bible" data-page="bible"></section>
+      <section class="page" id="page-journal" data-page="journal"></section>
+      <section class="page" id="page-prayer" data-page="prayer"></section>
+      <section class="page" id="page-plans" data-page="plans"></section>
+      <section class="page" id="page-mybible" data-page="mybible"></section>
+      <section class="page" id="page-study" data-page="study"></section>
+      <section class="page" id="page-settings" data-page="settings"></section>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <button class="active" data-page="home"><span>⌂</span>Home</button><button data-page="bible"><span>▤</span>Bible</button><button data-page="journal"><span>✎</span>Journal</button><button data-page="prayer"><span>♡</span>Prayer</button><button data-page="more"><span>⋯</span>More</button>
+      </nav>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-content"></div></section></div>
+  <input id="import-file" type="file" accept="application/json,.json" hidden>
+</body>
+</html>
